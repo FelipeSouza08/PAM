@@ -19,7 +19,7 @@ namespace DiceApp
 
         private async void FlipButton_Clicked(object sender, EventArgs e)
         {
-            if (totalFO >= 50)
+            if (totalFO >= 25)
             {
                 FlipButton.IsEnabled = false;
                 await DisplayAlert("FIM DE JOGO!!", "Tentativas máximas utilizadas", "OK");
