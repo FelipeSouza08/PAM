@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiceApp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Image
+                x:Name="FaceImage"
+                Source="dado_1.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Faces do dado de 6 lados." />
+
+            <Picker x:Name="FacePicker"
+                Title="Escolha o Lado do Dado!">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                        <x:String>4</x:String>
+                        <x:String>5</x:String>
+                        <x:String>6</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button
+                x:Name="FlipButton"
+                Text="Rolar o Dado" 
+                SemanticProperties.Hint="Rola o dado e cai uma das faces."
+                Clicked="FlipButton_Clicked"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="RestartButton"
+                Text="Reiniciar Jogo" 
+                SemanticProperties.Hint="Reseta todas as pontuações e tentativas."
+                Clicked="RestartButton_Clicked"
+                HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
